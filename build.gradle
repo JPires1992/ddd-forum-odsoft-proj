@@ -1,3 +1,17 @@
 plugins {
     id "com.github.node-gradle.node" version "7.0.2"
 }
+
+task InstallDependencies {
+    script {
+        echo 'Installing dependencies'
+        sh 'npm install'
+    }
+}
+
+task Build {
+    script {
+        echo 'Building project'
+        sh 'npm run-script build'
+    }
+}
